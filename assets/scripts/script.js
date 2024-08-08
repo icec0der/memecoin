@@ -26,7 +26,7 @@ document.getElementById('copyButton').addEventListener('click', function () {
 	document.body.appendChild(tempTextarea)
 
 	tempTextarea.select()
-	tempTextarea.setSelectionRange(0, 99999) 
+	tempTextarea.setSelectionRange(0, 99999)
 
 	document.execCommand('copy')
 
@@ -38,3 +38,32 @@ document.getElementById('copyButton').addEventListener('click', function () {
 		copyButton.textContent = 'Copy'
 	}, 2000)
 })
+const totalSol = 7777;
+const solInput = document.getElementById('solInput');
+const percentValue = document.getElementById('percentValue');
+const percentDiv = document.querySelector('.percent_div');
+const maxWidth = document.querySelector('.percent_big_div').offsetWidth;
+const padding = 10 * 2;
+
+solInput.addEventListener('input', function() {
+    let inputValue = parseFloat(solInput.value);
+
+    // Default to 0 if input is empty or invalid
+    if (isNaN(inputValue) || inputValue === '') {
+        inputValue = 0;
+        solInput.value = 0;
+    } else if (inputValue > totalSol) {
+        inputValue = totalSol;
+        solInput.value = totalSol; // Optional: Update the input field value to totalSol
+    }
+
+    const percentage = (inputValue / totalSol) * 100;
+
+    percentValue.textContent = percentage.toFixed(2) + '%';
+
+    // Calculate the new width, considering padding
+    const newWidth = (maxWidth - padding) * (inputValue / totalSol);
+    percentDiv.style.width = newWidth + 'px';
+});
+
+
