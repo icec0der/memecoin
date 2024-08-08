@@ -336,7 +336,7 @@ section.about .left img:first-child {
 
 .percent_div {
 	background: #4ce91b;
-	width: 0px;
+	width: 445px;
 	border-radius: 55px;
 	transition: width 0.3s ease;
 	box-sizing: border-box;
@@ -355,7 +355,12 @@ section.about .left img:first-child {
 }
 
 #percentValue {
-	margin-left: 4px;
+	font-family: Rubik;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+	margin-left: 4px;	
 }
 
 .percent_div p {
