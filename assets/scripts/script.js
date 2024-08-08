@@ -45,13 +45,15 @@ const percentDiv = document.querySelector('.percent_div');
 const maxWidth = document.querySelector('.percent_big_div').offsetWidth;
 const padding = 10 * 2;
 
-solInput.addEventListener('input', function() {
+const originalWidth = solInput.offsetWidth; // Store the original width
+
+function updateValues() {
     let inputValue = parseFloat(solInput.value);
 
     // Default to 0 if input is empty or invalid
-    if (isNaN(inputValue) || inputValue === '') {
+    if (isNaN(inputValue)) {
         inputValue = 0;
-        solInput.value = 0;
+        // solInput.value = 0;
     } else if (inputValue > totalSol) {
         inputValue = totalSol;
         solInput.value = totalSol; // Optional: Update the input field value to totalSol
@@ -64,6 +66,21 @@ solInput.addEventListener('input', function() {
     // Calculate the new width, considering padding
     const newWidth = (maxWidth - padding) * (inputValue / totalSol);
     percentDiv.style.width = newWidth + 'px';
+}
+
+// Update values on input change
+solInput.addEventListener('input', updateValues);
+
+// Set to 0 if empty when losing focus
+solInput.addEventListener('blur', function() {
+    if (solInput.value === '') {
+        solInput.value = 0;
+        updateValues();
+    }
+    solInput.style.width = originalWidth + 'px';
 });
 
-
+// Set the width to 50px on focus
+solInput.addEventListener('focus', function() {
+    solInput.style.width = '50px';
+});

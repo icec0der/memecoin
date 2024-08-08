@@ -1511,8 +1511,8 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 	}
 
 	.percent_div {
-		width: 50%;
-		padding: 10px;
+		width: 100%;
+		padding: 4px;
 	}
 
 	.sol_text {
