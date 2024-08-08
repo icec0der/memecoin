@@ -180,8 +180,8 @@ section.about .left img:first-child {
 
 .top-left {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: -30px;
+	left: -20px;
 	z-index: 1;
 }
 
@@ -218,12 +218,17 @@ section.about .left img:first-child {
 }
 
 .copy_green_zone {
-	background: #012500;
-	width: 1220px;
-	padding: 57px 0;
-	border-radius: 50px;
-	position: relative;
+  /* background-color: #011a00; */
+  background-image: url('/assets/images/Subtract.png');
+  background-blend-mode: overlay;
+  width: 1220px;
+  padding: 57px 0;
+  border-radius: 50px;
+  position: relative;
+  height: 660px;
+  margin-bottom: 100px;
 }
+
 
 .green_zone h3 {
 	font-size: 24px;
@@ -1022,7 +1027,7 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 }
 
 @media (max-width: 1210px) {
-  .copy h1 {
+	.copy h1 {
 		font-size: 60px;
 		line-height: 50px;
 	}
@@ -1297,13 +1302,16 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 	header .header-item h1 {
 		font-size: 85px;
 	}
+ 
 }
 
 @media (max-width: 510px) {
 	header nav .left a img:last-child {
 		display: none;
 	}
-  .copy h1 {
+
+
+	.copy h1 {
 		font-size: 46px;
 		line-height: 50px;
 	}
@@ -1474,6 +1482,7 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 	}
 	.sol_text {
 		font-size: 18px;
+    margin-top: 0;
 	}
 }
 
@@ -1527,7 +1536,7 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 }
 
 .br {
-  display: flex;
+	display: flex;
 }
 
 @media (min-width: 200px) and (max-width: 400px) {
@@ -1539,46 +1548,44 @@ section.roadmap .roadmaps-items .box-roadmap:nth-child(4) h4 {
 		display: none;
 	}
 
-
-
 	.copy_description {
 		font-family: Rubik;
 		font-size: 17px;
 		font-weight: 400;
 		line-height: 23.4px;
 		text-align: center;
-    margin-top: 20px;
+		margin-top: 20px;
 	}
 
-  .copy img {
-    margin:  10px 0;
-  }
+	.copy img {
+		margin: 10px 0;
+	}
 
-  .copy_button {
-    gap: 5px;
-  }
+	.copy_button {
+		gap: 5px;
+	}
 
-  .copy_green_zone {
-    padding: 20px 0;
-  }
+	.copy_green_zone {
+		padding: 20px 0;
+	}
 
-  .sol_text {
-    font-size: 15px;
-  }
+	.sol_text {
+		font-size: 15px;
+	}
 
-  .green_zone h3 {
-    font-size: 20px;
-  }
+	.green_zone h3 {
+		font-size: 20px;
+	}
 }
 
 @media (min-width: 400px) and (max-width: 900px) {
 	.copy_icon_and_text p {
 		font-size: 13px;
 	}
-  .copy img {
-    margin:  20px 0;
-  }
-  .copy_green_zone {
-    padding: 20px 0;
-  }
+	.copy img {
+		margin: 20px 0;
+	}
+	.copy_green_zone {
+		padding: 20px 0;
+	}
 }
